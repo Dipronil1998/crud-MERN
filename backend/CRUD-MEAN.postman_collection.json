@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "5e4759d5-791f-4055-bd05-bc3bf489d97c",
+		"_postman_id": "4c7ed7e8-e9c4-4273-a7a2-4df594b397bc",
 		"name": "CRUD-MEAN",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25728278"
 	},
 	"item": [
 		{
@@ -20,11 +21,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/api/user/signup",
+					"raw": "localhost:8000/api/user/signup",
 					"host": [
 						"localhost"
 					],
-					"port": "3000",
+					"port": "8000",
 					"path": [
 						"api",
 						"user",
@@ -49,15 +50,131 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/api/user/login",
+					"raw": "localhost:8000/api/user/login",
 					"host": [
 						"localhost"
 					],
-					"port": "3000",
+					"port": "8000",
 					"path": [
 						"api",
 						"user",
 						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Posts",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRAZ21haWwuY29tIiwidXNlcklkIjoiNjQzMWE1NGQ0YzgyNjFhMWUwYjEzYmE3IiwiaWF0IjoxNjgxMTUzNTQzLCJleHAiOjE2ODExNTcxNDN9.x7bXSWcJm40NB1wlbsZ-tcl5ZR8pQof_sv8rwZiGxHE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "dfsg",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "ssssssssssssssssss",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/home/dipronil/Pictures/Screenshot from 2023-03-24 21-13-25.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/posts",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all posts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRAZ21haWwuY29tIiwidXNlcklkIjoiNjQzMWE1NGQ0YzgyNjFhMWUwYjEzYmE3IiwiaWF0IjoxNjgxMTUzNTQzLCJleHAiOjE2ODExNTcxNDN9.x7bXSWcJm40NB1wlbsZ-tcl5ZR8pQof_sv8rwZiGxHE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/api/posts",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get one post",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/posts/62ecf0713b6a2343584f6df0",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"posts",
+						"62ecf0713b6a2343584f6df0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Posts",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRAZ21haWwuY29tIiwidXNlcklkIjoiNjQzMWE1NGQ0YzgyNjFhMWUwYjEzYmE3IiwiaWF0IjoxNjgxMTUzNTQzLCJleHAiOjE2ODExNTcxNDN9.x7bXSWcJm40NB1wlbsZ-tcl5ZR8pQof_sv8rwZiGxHE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/api/posts/64345f821a5042c00b347d63",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"posts",
+						"64345f821a5042c00b347d63"
 					]
 				}
 			},

@@ -2,7 +2,7 @@
   "name": "udemy",
   "version": "0.0.0",
   "scripts": {
-    "start-server": "npx nodemon ./backend/server.js"
+    "start": "npx nodemon ./backend/server.js"
   },
   "private": true,
   "dependencies": {
