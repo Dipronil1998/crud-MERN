@@ -17,7 +17,6 @@ const login = (email, password) => {
     })
     .then((response) => {
       if (response.data.token) {
-        console.log(response.data.token, "XX");
         localStorage.setItem("user", response.data.token);
       }
       return response.data;
@@ -27,20 +26,17 @@ const login = (email, password) => {
 const logout = () => {
   localStorage.removeItem("user");
   return true;
-  // return axios.post(API_URL + "signout").then((response) => {
-  //   return response.data;
-  // });
 };
 
-// const getCurrentUser = () => {
-//   return JSON.parse(localStorage.getItem("user"));
-// };
+const getCurrentUser = () => {
+  return localStorage.getItem("user");
+};
 
 const AuthService = {
   register,
   login,
   logout,
-//   getCurrentUser,
+  getCurrentUser,
 }
 
 export default AuthService;

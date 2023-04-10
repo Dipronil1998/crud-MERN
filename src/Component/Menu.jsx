@@ -13,7 +13,6 @@ const Menu = () => {
 
     useEffect(() => {
         const currentUser = localStorage.getItem("user");
-        console.log(currentUser, "isLogin");
         setCurrentUser(currentUser)
     })
 
