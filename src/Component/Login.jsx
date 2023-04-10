@@ -12,6 +12,15 @@ const Login = () => {
 
     const navigate = useNavigate();
 
+    useEffect(() => {
+        const user = AuthService.getCurrentUser();
+        if (user !== null) {
+            navigate("/post");
+        } else {
+            navigate("/");
+        }
+      }, []);
+
     const onChangeEmail = (e) => {
         const email = e.target.value;
         setEmail(email);

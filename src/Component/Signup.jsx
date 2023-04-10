@@ -1,5 +1,5 @@
-import React, { useState, useRef } from "react";
-
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { isEmail } from "validator";
 import AuthService from "../Service/AuthService";
 
@@ -39,6 +39,17 @@ const Signup = () => {
     const [password, setPassword] = useState();
     const [successful, setSuccessful] = useState(false);
     const [message, setMessage] = useState();
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const user = AuthService.getCurrentUser();
+        if (user !== null) {
+            navigate("/post");
+        } else {
+            navigate("/");
+        }
+      }, []);
 
     const onChangeEmail = (e) => {
         const email = e.target.value;
