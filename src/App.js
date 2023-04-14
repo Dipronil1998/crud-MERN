@@ -3,6 +3,7 @@ import Signup from "./Component/Signup";
 import Login from "./Component/Login";
 import Menu from "./Component/Menu";
 import Post from "./Component/Post";
+import Lists from "./Component/Lists";
 import Error from "./Component/Error";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Protected from "./Route/Protected";
@@ -28,7 +29,8 @@ function App() {
     <>
       <Menu />
       <Routes>
-        <Route path="/" Component={Login} />
+        <Route path="/" Component={Lists} />
+        <Route path="/login" Component={Login} />
         <Route path="/signup" Component={Signup} />
         <Route
           path="/post"

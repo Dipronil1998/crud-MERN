@@ -30,3 +30,4 @@ app.use("/api/posts", postsRoute)
 app.use("/api/user", usersRoute)
 
 module.exports = app;
+

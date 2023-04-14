@@ -18,12 +18,13 @@ const Menu = () => {
 
     return (
         <> 
+            <Link to="/">Home</Link>
             {
                 currentUser 
                 ? <Link to="/"  onClick={logOut}>Logout</Link>
                 : (
                     <>
-                        <Link to="/">Login</Link>
+                        <Link to="/login">Login</Link>
                         <Link to="/signup">Signup</Link>
                     </>
                 )
