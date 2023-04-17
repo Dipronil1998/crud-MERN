@@ -16,6 +16,10 @@ const Lists = () => {
     setStoreUserId(userId)
   }
 
+  const deletePost = (id) => {
+    console.log("delete", id);
+  }
+
   useEffect(() => {
     getAllPosts();
     getUserId();
@@ -42,7 +46,7 @@ const Lists = () => {
                     storeUserId === post.creator && (
                             <>
                                 <button>Edit</button>
-                                <button>Delete</button>
+                                <button onClick={() => deletePost(post._id)}>Delete</button>
                             </>
                     )
                         

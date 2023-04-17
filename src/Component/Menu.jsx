@@ -3,36 +3,39 @@ import { Link } from "react-router-dom";
 import AuthService from "../Service/AuthService";
 
 const Menu = () => {
-    // const isLogin = localStorage.getItem("user");
-    const [currentUser, setCurrentUser] = useState(null)
+  // const isLogin = localStorage.getItem("user");
+  const [currentUser, setCurrentUser] = useState(null);
 
-    const logOut = () => {
-        AuthService.logout();
-        setCurrentUser(null)
-    }
+  const logOut = () => {
+    AuthService.logout();
+    setCurrentUser(null);
+  };
 
-    useEffect(() => {
-        const currentUser = localStorage.getItem("token");
-        setCurrentUser(currentUser)
-    })
+  useEffect(() => {
+    const currentUser = localStorage.getItem("token");
+    setCurrentUser(currentUser);
+  });
 
-    return (
-        <> 
-            <Link to="/">Home</Link>
-            {
-                currentUser 
-                ? <Link to="/"  onClick={logOut}>Logout</Link>
-                : (
-                    <>
-                        <Link to="/login">Login</Link>
-                        <Link to="/signup">Signup</Link>
-                    </>
-                )
-            }
-            
+  return (
+    <>
+      <Link to="/">Home</Link>
+      {currentUser ? (
+        <>
+          <Link to="/post">
+            Create Post
+          </Link>
+          <Link to="/" onClick={logOut}>
+            Logout
+          </Link>
         </>
-        
-    )
-}
+      ) : (
+        <>
+          <Link to="/login">Login</Link>
+          <Link to="/signup">Signup</Link>
+        </>
+      )}
+    </>
+  );
+};
 
 export default Menu;
