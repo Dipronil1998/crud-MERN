@@ -17,19 +17,25 @@ const login = (email, password) => {
     })
     .then((response) => {
       if (response.data.token) {
-        localStorage.setItem("user", response.data.token);
+        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("userId", response.data.userId);
       }
       return response.data;
     });
 };
 
 const logout = () => {
-  localStorage.removeItem("user");
+  localStorage.removeItem("token");
+  localStorage.removeItem("userId");
   return true;
 };
 
 const getCurrentUser = () => {
-  return localStorage.getItem("user");
+  return localStorage.getItem("token");
+};
+
+const getCurrentUserId = () => {
+  return localStorage.getItem("userId");
 };
 
 const AuthService = {
@@ -37,6 +43,7 @@ const AuthService = {
   login,
   logout,
   getCurrentUser,
+  getCurrentUserId
 }
 
 export default AuthService;

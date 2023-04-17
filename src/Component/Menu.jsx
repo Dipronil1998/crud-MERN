@@ -12,7 +12,7 @@ const Menu = () => {
     }
 
     useEffect(() => {
-        const currentUser = localStorage.getItem("user");
+        const currentUser = localStorage.getItem("token");
         setCurrentUser(currentUser)
     })
 
