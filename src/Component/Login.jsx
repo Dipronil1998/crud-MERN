@@ -51,7 +51,7 @@ const Login = () => {
         try {
             const response = await AuthService.login(email, password);
             navigate("/post");
-            window.location.reload();
+            // window.location.reload();
         } catch (error) {
             // const resMessage =
             // (error.response &&

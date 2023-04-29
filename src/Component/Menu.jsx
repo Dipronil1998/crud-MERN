@@ -5,7 +5,6 @@ import AuthService from "../Service/AuthService";
 const Menu = () => {
   // const isLogin = localStorage.getItem("user");
   const [currentUser, setCurrentUser] = useState(null);
-
   const logOut = () => {
     AuthService.logout();
     setCurrentUser(null);

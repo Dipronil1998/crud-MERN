@@ -23,7 +23,6 @@ const Lists = () => {
     if (postDelete.status === 200) {
       setMessage("Post delete Successfully");
       setSuccessful(true);
-      window.location.reload();
     } else {
       setMessage(postDelete.data.message);
       setSuccessful(false);
@@ -34,6 +33,10 @@ const Lists = () => {
     getAllPosts();
     getUserId();
   }, []);
+
+  useEffect(() => {
+    getAllPosts();
+  }, [posts])
 
   return (
     <>

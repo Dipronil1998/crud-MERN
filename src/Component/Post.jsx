@@ -9,6 +9,8 @@ const Post = () => {
     const [image, setImage] = useState();
     const [successful, setSuccessful] = useState(false);
     const [message, setMessage] = useState();
+    // const [formData,setFormData] = useState({})
+    // setFormData({...formData,[event.target.name]:event.target.value})
 
     const onChangeTitle = (event) =>{
         setTitle(event.target.value);
@@ -19,7 +21,8 @@ const Post = () => {
     }
 
     const onChangeImaage = (event) =>{
-        setImage(event.target.files[0], "XXX")
+        setImage(event.target.files[0])
+        console.log(event.target.files[0], "XXX");
     }
 
     const handlePost = (e) => {
