@@ -71,7 +71,7 @@
 				"header": [
 					{
 						"key": "authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRAZ21haWwuY29tIiwidXNlcklkIjoiNjQzMWE1NGQ0YzgyNjFhMWUwYjEzYmE3IiwiaWF0IjoxNjgxMTUzNTQzLCJleHAiOjE2ODExNTcxNDN9.x7bXSWcJm40NB1wlbsZ-tcl5ZR8pQof_sv8rwZiGxHE",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRAZ21haWwuY29tIiwidXNlcklkIjoiNjQzMWE1NGQ0YzgyNjFhMWUwYjEzYmE3IiwiaWF0IjoxNjgyMzM5NjEwLCJleHAiOjE2ODIzNDMyMTB9.GA_BReoCCLbX-So85IhpNYYKalDaQb47jQz6yxyYxLo",
 						"type": "text"
 					}
 				],
@@ -80,18 +80,18 @@
 					"formdata": [
 						{
 							"key": "title",
-							"value": "dfsg",
+							"value": "tandrima",
 							"type": "text"
 						},
 						{
 							"key": "content",
-							"value": "ssssssssssssssssss",
+							"value": "tandrima lashkhor",
 							"type": "text"
 						},
 						{
 							"key": "image",
 							"type": "file",
-							"src": "/home/dipronil/Pictures/Screenshot from 2023-03-24 21-13-25.png"
+							"src": "/home/dipronil/Pictures/person.jpeg"
 						}
 					]
 				},
@@ -161,12 +161,12 @@
 				"header": [
 					{
 						"key": "authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRAZ21haWwuY29tIiwidXNlcklkIjoiNjQzMWE1NGQ0YzgyNjFhMWUwYjEzYmE3IiwiaWF0IjoxNjgxMTUzNTQzLCJleHAiOjE2ODExNTcxNDN9.x7bXSWcJm40NB1wlbsZ-tcl5ZR8pQof_sv8rwZiGxHE",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRAZ21haWwuY29tIiwidXNlcklkIjoiNjQzMWE1NGQ0YzgyNjFhMWUwYjEzYmE3IiwiaWF0IjoxNjgxNzM3NzU4LCJleHAiOjE2ODE3NDEzNTh9.GRP6oFdbZgppMz36xiXGWAJ-r5mu_GVckbI1XpWAcJk",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "localhost:8000/api/posts/64345f821a5042c00b347d63",
+					"raw": "localhost:8000/api/posts/643d48a4f5a73b6df3aa59e3",
 					"host": [
 						"localhost"
 					],
@@ -174,7 +174,7 @@
 					"path": [
 						"api",
 						"posts",
-						"64345f821a5042c00b347d63"
+						"643d48a4f5a73b6df3aa59e3"
 					]
 				}
 			},
