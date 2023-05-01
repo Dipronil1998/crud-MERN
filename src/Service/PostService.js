@@ -19,9 +19,32 @@ const deletePosts = async (id) => {
   }
 };
 
+const createPosts = async (title, content, image) => {
+  try {
+    const data = {
+      title:title,
+      content:content,
+      image: image
+    }
+    console.log(data,"data");
+    // return
+    const token = await AuthService.getCurrentUser();
+    const response = await axios.post(API_URL, data,{
+      headers: { 
+        authorization: `Bearer ${token}`,
+        'content-type': 'multipart/form-data' 
+      },
+    })
+    return response;
+  } catch (error) {
+    return error.response;
+  }
+}
+
 const PostService = {
   getPosts,
   deletePosts,
+  createPosts
 };
 
 export default PostService;

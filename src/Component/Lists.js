@@ -57,6 +57,7 @@ const Lists = () => {
         <tr>
           <th>Title</th>
           <th>Content</th>
+          <th>Image</th>
           <th>Action</th>
         </tr>
         {posts &&
@@ -66,6 +67,7 @@ const Lists = () => {
                 <tr>
                   <td>{post.title}</td>
                   <td>{post.content}</td>
+                  <td><img src={post.imagePath} height={100} width={100}></img></td>
                   <td>
                     {storeUserId === post.creator && (
                       <>

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { isEmail } from "validator";
 import AuthService from "../Service/AuthService";
+import PostService from "../Service/PostService";
 import { useNavigate } from "react-router-dom";
 
 const Post = () => {
@@ -9,6 +10,7 @@ const Post = () => {
     const [image, setImage] = useState();
     const [successful, setSuccessful] = useState(false);
     const [message, setMessage] = useState();
+    const navigate = useNavigate();
     // const [formData,setFormData] = useState({})
     // setFormData({...formData,[event.target.name]:event.target.value})
 
@@ -25,7 +27,7 @@ const Post = () => {
         console.log(event.target.files[0], "XXX");
     }
 
-    const handlePost = (e) => {
+    const handlePost = async (e) => {
         e.preventDefault();
         setMessage("");
         setSuccessful(false);
@@ -43,6 +45,19 @@ const Post = () => {
             setMessage("Please select a image");
             setSuccessful(false);
             return
+        }
+        try {
+            const response = await PostService.createPosts(title,content,image);
+            console.log(response.data.message, "response");
+            setMessage(response.data.message);
+            setSuccessful(true);
+            setTimeout(() => {
+                navigate("/");
+            }, 2000);
+        } catch (error) {
+            console.log(error.response.data.message, "QQ");
+            setMessage(error.response.data.message);
+            setSuccessful(false);
         }
     }
 
