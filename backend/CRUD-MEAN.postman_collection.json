@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "4c7ed7e8-e9c4-4273-a7a2-4df594b397bc",
+		"_postman_id": "57c513fb-79a3-4979-818b-1d9c4f008516",
 		"name": "CRUD-MEAN",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "25728278"
+		"_exporter_id": "12457882"
 	},
 	"item": [
 		{
@@ -71,7 +71,7 @@
 				"header": [
 					{
 						"key": "authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRAZ21haWwuY29tIiwidXNlcklkIjoiNjQzMWE1NGQ0YzgyNjFhMWUwYjEzYmE3IiwiaWF0IjoxNjgyMzM5NjEwLCJleHAiOjE2ODIzNDMyMTB9.GA_BReoCCLbX-So85IhpNYYKalDaQb47jQz6yxyYxLo",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRAZ21haWwuY29tIiwidXNlcklkIjoiNjQzMWE1NGQ0YzgyNjFhMWUwYjEzYmE3IiwiaWF0IjoxNjgyOTQ5OTcyLCJleHAiOjE2ODI5NTM1NzJ9.-OcH5TF6zPf2HLyeOVshgpIRsnMjkpgmY5i_lZkTMfs",
 						"type": "text"
 					}
 				],
@@ -91,7 +91,7 @@
 						{
 							"key": "image",
 							"type": "file",
-							"src": "/home/dipronil/Pictures/person.jpeg"
+							"src": "/D:/image/img5.jpg"
 						}
 					]
 				},
@@ -175,6 +175,52 @@
 						"api",
 						"posts",
 						"643d48a4f5a73b6df3aa59e3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit posts",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRAZ21haWwuY29tIiwidXNlcklkIjoiNjQzMWE1NGQ0YzgyNjFhMWUwYjEzYmE3IiwiaWF0IjoxNjgzMzE1NDQwLCJleHAiOjE2ODMzMTkwNDB9.j4R026hgbqTSk0ahrfnG1Us4qGOsl-aq8D3eeH3HNLg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "tttttttt",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "ccccccccccccccccccccccccccc",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/D:/image/img16.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/posts/644fccbb65819c99850125b4",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"posts",
+						"644fccbb65819c99850125b4"
 					]
 				}
 			},
