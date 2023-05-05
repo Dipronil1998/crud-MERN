@@ -68,13 +68,13 @@ exports.update = (req, res, next) => {
       const url = req.protocol + "://" + req.get("host");
       imagePath = url + "/images/" + req.file.filename;
     }
-    const post = new Post({
-      _id: req.body.id,
+    const post = {
+      // _id: req.body.id,
       title: req.body.title,
       content: req.body.content,
       imagePath: imagePath,
-      creator: req.userData.userId,
-    });
+      // creator: req.userData.userId,
+    };
     Post.updateOne({ _id: req.params.id, creator: req.userData.userId }, post)
       .then((result) => {
         if (result.modifiedCount > 0) {
@@ -84,6 +84,7 @@ exports.update = (req, res, next) => {
         }
       })
       .catch((error) => {
+        console.log(error);
         res.status(500).json({
           message: "Could not update post",
         });

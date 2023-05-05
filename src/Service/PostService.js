@@ -51,10 +51,32 @@ const getPostsById = async(id) =>{
   }
 }
 
+
+const editPosts = async (id, title, content, image) => {
+  try {
+    const data = {
+      title:title,
+      content:content,
+      image: image
+    }
+    const token = await AuthService.getCurrentUser();
+    const response = await axios.put(API_URL + `${id}`, data,{
+      headers: { 
+        authorization: `Bearer ${token}`,
+        'content-type': 'multipart/form-data' 
+      },
+    })
+    return response;
+  } catch (error) {
+    return error.response;
+  }
+}
+
 const PostService = {
   getPosts,
   deletePosts,
   createPosts,
+  editPosts,
   getPostsById
 };
 

@@ -27,9 +27,7 @@ const Edit = () => {
     }
 
     const getPost = async () => {
-        
         const post = await PostService.getPostsById(id);
-        console.log(post.data, "post");
         setTitle(post.data.title);
         setContent(post.data.content);
         setImage(post.data.imagePath);
@@ -59,8 +57,7 @@ const Edit = () => {
             return
         }
         try {
-            const response = await PostService.createPosts(title,content,image);
-            console.log(response.data.message, "response");
+            const response = await PostService.editPosts(id,title,content,image);
             setMessage(response.data.message);
             setSuccessful(true);
             setTimeout(() => {
