@@ -5,7 +5,8 @@ const mongoose = require('mongoose');
 const { createShorthandPropertyAssignment } = require("typescript");
 const postsRoute = require("./routes/posts");
 const usersRoute = require("./routes/users");
-
+const {fileRemove} = require("./scheduler/fileremove");
+fileRemove;
 const app = express();
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:false}));
