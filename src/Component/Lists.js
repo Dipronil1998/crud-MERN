@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PostService from "../Service/PostService";
 import AuthService from "../Service/AuthService";
+import { Link } from "react-router-dom";
 
 const Lists = () => {
   const [posts, setPosts] = useState();
@@ -71,7 +72,7 @@ const Lists = () => {
                   <td>
                     {storeUserId === post.creator && (
                       <>
-                        <button>Edit</button>
+                        <Link to={'/post/' + post._id}>Edit</Link>
                         <button onClick={() => deletePost(post._id)}>
                           Delete
                         </button>

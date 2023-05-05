@@ -3,6 +3,7 @@ import Signup from "./Component/Signup";
 import Login from "./Component/Login";
 import Menu from "./Component/Menu";
 import Post from "./Component/Post";
+import Edit from "./Component/Edit";
 import Lists from "./Component/Lists";
 import Error from "./Component/Error";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
@@ -37,6 +38,14 @@ function App() {
           element={
             <Protected isLoggedIn={isLoggedIn}>
               <Post />
+            </Protected>
+          }
+        />
+        <Route
+          path="/post/:id"
+          element={
+            <Protected isLoggedIn={isLoggedIn}>
+              <Edit />
             </Protected>
           }
         />

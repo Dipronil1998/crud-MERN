@@ -26,8 +26,6 @@ const createPosts = async (title, content, image) => {
       content:content,
       image: image
     }
-    console.log(data,"data");
-    // return
     const token = await AuthService.getCurrentUser();
     const response = await axios.post(API_URL, data,{
       headers: { 
@@ -41,10 +39,23 @@ const createPosts = async (title, content, image) => {
   }
 }
 
+const getPostsById = async(id) =>{
+  try {
+    const token = await AuthService.getCurrentUser();
+    const response = axios.get(API_URL + `${id}`, {
+      headers: { authorization: `Bearer ${token}` },
+    });
+    return response;
+  } catch (error) {
+    
+  }
+}
+
 const PostService = {
   getPosts,
   deletePosts,
-  createPosts
+  createPosts,
+  getPostsById
 };
 
 export default PostService;
